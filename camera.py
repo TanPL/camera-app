@@ -13,6 +13,7 @@ class Camera(object):
 
     def get_frame(self):
         success, frame = self.video.read()
+        frame = cv.flip(frame,1)
         if not success:
             return None
 
